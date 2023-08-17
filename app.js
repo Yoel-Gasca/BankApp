@@ -1,8 +1,9 @@
 // implementar un mapa entre las rutas de URL
 const routes = {
-    '/login': { templateId: 'login', title: 'Inicio de Sesión' },
-    '/dashboard': { templateId: 'dashboard', title: 'Tablero' },
-    '/404': { templateId: '404', title: 'Página no encontrada' },
+    '/login': { templateId: 'login', title: 'Login' },
+    '/dashboard': { templateId: 'dashboard', title: 'Dashboard' },
+    '/404': { templateId: '404', title: 'Page not found' },
+    '/transaction': { templateId: 'transantion', title: 'Transaction'}
 };
 
 // Recupere el elemento de plantilla en el DOM

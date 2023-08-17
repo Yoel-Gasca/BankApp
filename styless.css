@@ -1,7 +1,8 @@
 :root {
     /* Colors */
-    --primary: #0091ea;
-    --primary-light: #7bbde6;
+    --primary: #183757;
+    --secondary: #ffffff;
+    --primary-light: #306daa;
     --accent: #546e7a;
     --grey: #445;
     --error: #f52;
@@ -307,6 +308,41 @@
     text-align: right;
   }
   
+  
+  /* ------------------------------------------------------------------------ */
+  /* 404 */
+  /* ------------------------------------------------------------------------ */
+  .Error-page {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(var(--primary), var(--primary-light));
+  }
+
+  .Error-page .Error-container h2{
+    color: #ffffff;
+  }
+
+  .Error-container {
+    flex: auto;
+    max-width: 480px;
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  .Error-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+    margin: var(--space-md);
+  }
+
+  .Error-logo {
+    height: 80px;
+    vertical-align: middle;
+  }
+
   /* ------------------------------------------------------------------------ */
   /* Utilities */
   /* ------------------------------------------------------------------------ */
