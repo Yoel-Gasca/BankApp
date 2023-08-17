@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="app.js" defer></script>
+    <link rel="icon" type="image/png" href="./Assets/BankAppIco.png">
+    <link rel="stylesheet" href="./styless.css">
     <title>Bank App</title>
  </head>
  <body>
@@ -11,16 +13,33 @@
 
     <!--Plantilla con un título y una sección que contiene un botón para realizar la navegación de usuario.-->
     <template id="login">
-        <h1>Bank App</h1>
+        <h1></h1>
         <section>
-            <button onclick="navigate('/dashboard')">Login</button>
+            <form id="loginForm">
+                <label for="user">Username</label>
+                <input name="user" type="text">
+                <button onclick="navigate('/dashboard')">Login</button>
+            </form>
+            <hr/>
+            <h2>Register</h2>
+            <form id="registerForm" action="javascript:register()">
+                <label for="user">Username</label>
+                <input name="user" type="text" maxlength="20" required>
+                <label for="currency">Currency</label>
+                <input name="currency" type="text" value="$" maxlength="5" required>
+                <label for="description">Description</label>
+                <input name="description" type="text" maxlength="100">
+                <label for="balance">Current balance</label>
+                <input name="balance" type="number" value="0">
+                <button>Register</button>
+            </form>
         </section>
     </template>
 
     <!--Plantilla para el centro de control/ Dashboard-->
     <template id="dashboard">
         <header>
-            <h1>Bank App</h1>
+            <h1>Dashboard</h1>
             <button onclick="navigate('/login')">Logout</button><!--Boton: cerrar sesión-->
         </header>
         <section>

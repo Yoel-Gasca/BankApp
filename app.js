@@ -36,6 +36,34 @@ function navigate(path) {
     updateRoute();
 }
 
+// Función de registro
+async function register() {
+    const registerForm = document.getElementById('registerForm');
+    const formData = new FormData(registerForm);
+    const data = Object.fromEntries(formData);
+    const jsonData = JSON.stringify(data);
+    const result = await createAccount(jsonData);
+
+    if (result.error) {
+        return console.log('An error occured:', result.error);
+    }
+    console.log('Account created!', result);
+}
+
+// Funcion asincrona que envia los datos de usuario al servidor
+async function createAccount(account) {
+    try {
+        const response = await fetch('//localhost:5000/api/accounts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: account
+        });
+        return await response.json();
+    } catch (error) {
+        return { error: error.message || 'Unknown error' };
+    }
+}
+
 // Asegura de que la plantilla mostrada se actualice cuando cambie el historial del navegador
 window.onpopstate = () => updateRoute();
 updateRoute();
