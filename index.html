@@ -21,10 +21,11 @@
                 <div class="login-content">
                     <h1></h1>
                     <h2 class="text-center">Login</h2>
-                    <form id="loginForm">
+                    <form id="loginForm" action="javascript:login()">
                         <label for="user">Username</label>
                         <input name="user" type="text">
-                        <button onclick="navigate('/dashboard')">Login</button>
+                        <div id="loginError" role="alert"></div>
+                        <button>Login</button>
                     </form>
                     <p class="login-separator text-center"><span>OR</span></p>
                     <h2 class="text-center">Register</h2>
@@ -37,6 +38,7 @@
                         <input name="description" type="text" maxlength="100">
                         <label for="balance">Current balance</label>
                         <input name="balance" type="number" value="0">
+                        <div id="registerError" role="alert"></div>
                         <button>Register</button>
                     </form>
                 </div>
@@ -53,10 +55,16 @@
                 <button onclick="navigate('/login')">Logout</button><!--Boton: cerrar sesión-->
             </header>
             <div class="balance">
-                <div>Balance: 100$</div> <!--Saldo actual de la cuenta bancaria-->
+                <div>Balance:</div>
+                <span id="balance"></span>
+                <span id="currency"></span> <!--Saldo actual de la cuenta bancaria-->
                 <!--Lista de transacciones, que se muestra en una tabla.-->
             </div>
             <div class="dashboard-content">
+                <div class="transactions-title">
+                    <h2 id="description"></h2>
+                    <button onclick="addTransaction()">Add transaction</button>
+                </div>
                 <h2>Transactions</h2>
                 <table class="transactions-table" aria-label="Transactions">
                     <thead>

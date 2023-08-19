@@ -162,6 +162,10 @@
     background-color: var(--background);
     padding: var(--space-sm);
   }
+
+  #loginError{
+    color: red;
+  }
   
   /* ------------------------------------------------------------------------ */
   /* Dashboard page */
