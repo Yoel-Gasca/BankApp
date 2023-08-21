@@ -1,5 +1,10 @@
 //Variable para almacenar los datos
 let account = null;
+
+// ---------------------------------------------------------------------------
+// Templates & Routes
+// ---------------------------------------------------------------------------
+
 // Implementar un mapa entre las rutas de URL
 const routes = {
     '/login': { templateId: 'login', title: 'Login' },
@@ -51,6 +56,7 @@ function navigate(path) {
 // Funcion asincrona que envia los datos de usuario al servidor
 async function createAccount(account) {
     try {
+        // constante de la URL base de la API del servidor
         const response = await fetch('//localhost:5000/api/accounts', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -101,6 +107,7 @@ function updateElement(id, text) {
 // Funcion para recuperar los datos de la cuenta
 async function getAccount(user) {
     try {
+        // Constante que ayuda a recuperar los datos de cuenta de cada usuario
         const response = await fetch('//localhost:5000/api/accounts/' + encodeURIComponent(user));
         return await response.json();
     } catch (error) {
