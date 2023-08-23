@@ -21,7 +21,7 @@ function updateRoute(templateId) {
     const route = routes [path];
     
     if (!route) {
-        return navigate('dashboard');
+        return navigate('login');
     }
 
     // Actualizar el título de la ventana
@@ -204,11 +204,9 @@ function init() {
     }
   
     // Nuestro código de inicialización anterior
+    // Asegura de que la plantilla mostrada se actualice cuando cambie el historial del navegador
     window.onpopstate = () => updateRoute();
     updateRoute();
 }
 init();
 
-// Asegura de que la plantilla mostrada se actualice cuando cambie el historial del navegador
-window.onpopstate = () => updateRoute();
-updateRoute();

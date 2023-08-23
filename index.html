@@ -1,107 +1,107 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="app.js" defer></script>
-    <link rel="icon" type="image/png" href="./Assets/img/BankAppIco.png">
-    <link rel="stylesheet" href="./styless.css">
-    <title>Bank App</title>
- </head>
- <body>
-    <div id="app">Loading...</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="app.js" defer></script>
+   <link rel="icon" type="image/png" href="./Assets/img/BankAppIco.png">
+   <link rel="stylesheet" href="./styless.css">
+   <title>Bank App</title>
+</head>
+<body>
+   <div id="app">Loading...</div>
 
-    <!--Plantilla con un título y una sección que contiene un botón para realizar la navegación de usuario.-->
-    <template id="login">
-        <section class="login-page">
-            <div class="login-container">
-                <div class="login-title text-center">
-                    <img class="login-logo" src="./Assets/img/BankAppLogo2.png" alt="Bank App Logo">
-                </div>
-                <div class="login-content">
-                    <h1></h1>
-                    <h2 class="text-center">Login</h2>
-                    <form id="loginForm" action="javascript:login()">
-                        <label for="user">Username</label>
-                        <input name="user" type="text">
-                        <div id="loginError" role="alert"></div>
-                        <button>Login</button>
-                    </form>
-                    <p class="login-separator text-center"><span>OR</span></p>
-                    <h2 class="text-center">Register</h2>
-                    <form id="registerForm" action="javascript:register()">
-                        <label for="user">Username</label>
-                        <input name="user" type="text" maxlength="20" required>
-                        <label for="currency">Currency</label>
-                        <input name="currency" type="text" value="$" maxlength="5" required>
-                        <label for="description">Description</label>
-                        <input name="description" type="text" maxlength="100">
-                        <label for="balance">Current balance</label>
-                        <input name="balance" type="number" value="0">
-                        <div id="registerError" role="alert"></div>
-                        <button>Register</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </template>
+   <!--Plantilla con un título y una sección que contiene un botón para realizar la navegación de usuario.-->
+   <template id="login">
+       <section class="login-page">
+           <div class="login-container">
+               <div class="login-title text-center">
+                   <img class="login-logo" src="./Assets/img/BankAppLogo2.png" alt="Bank App Logo">
+               </div>
+               <div class="login-content">
+                   <h1></h1>
+                   <h2 class="text-center">Login</h2>
+                   <form id="loginForm" action="javascript:login()">
+                       <label for="user">Username</label>
+                       <input name="user" type="text">
+                       <div id="loginError" role="alert"></div>
+                       <button>Login</button>
+                   </form>
+                   <p class="login-separator text-center"><span>OR</span></p>
+                   <h2 class="text-center">Register</h2>
+                   <form id="registerForm" action="javascript:register()">
+                       <label for="user">Username</label>
+                       <input name="user" type="text" maxlength="20" required>
+                       <label for="currency">Currency</label>
+                       <input name="currency" type="text" value="$" maxlength="5" required>
+                       <label for="description">Description</label>
+                       <input name="description" type="text" maxlength="100">
+                       <label for="balance">Current balance</label>
+                       <input name="balance" type="number" value="0">
+                       <div id="registerError" role="alert"></div>
+                       <button>Register</button>
+                   </form>
+               </div>
+           </div>
+       </section>
+   </template>
 
-    <!--Plantilla para el centro de control/ Dashboard-->
-    <template id="dashboard">
-        <section class="dashboard-page">
-            <header class="dashboard-header">
-                <img class="dashboard-logo" src="./Assets/img/BankAppLogo2.png" alt="Squirrel Banking Logo">
-                <h1 class="dashboard-title hide-xs">Dashboard</h1>
-                <button onclick="navigate('/login')">Logout</button><!--Boton: cerrar sesión-->
-            </header>
-            <div class="balance">
-                <div>Balance:</div>
-                <span id="balance"></span>
-                <span id="currency"></span> <!--Saldo actual de la cuenta bancaria-->
-                <!--Lista de transacciones, que se muestra en una tabla.-->
-            </div>
-            <div class="dashboard-content">
-                <div class="transactions-title">
-                    <h2 id="description"></h2>
-                    <button onclick="addTransaction()">Add transaction</button>
-                </div>
-                <h2>Transactions</h2>
-                <table class="transactions-table" aria-label="Transactions">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Object</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody id="transactions"></tbody>
-                </table>
-            </div>
-        </section>
+   <!--Plantilla para el centro de control/ Dashboard-->
+   <template id="dashboard">
+       <section class="dashboard-page">
+           <header class="dashboard-header">
+               <img class="dashboard-logo" src="./Assets/img/BankAppLogo2.png" alt="Squirrel Banking Logo">
+               <h1 class="dashboard-title hide-xs">Dashboard</h1>
+               <button onclick="navigate('/login')">Logout</button><!--Boton: cerrar sesión-->
+           </header>
+           <div class="balance">
+               <div>Balance:</div>
+               <span id="balance"></span>
+               <span id="currency"></span> <!--Saldo actual de la cuenta bancaria-->
+               <!--Lista de transacciones, que se muestra en una tabla.-->
+           </div>
+           <div class="dashboard-content">
+               <div class="transactions-title">
+                   <h2 id="description"></h2>
+                   <button onclick="addTransaction()">Add transaction</button>
+               </div>
+               <h2>Transactions</h2>
+               <table class="transactions-table" aria-label="Transactions">
+                   <thead>
+                       <tr>
+                           <th>Date</th>
+                           <th>Object</th>
+                           <th>Amount</th>
+                       </tr>
+                   </thead>
+                   <tbody id="transactions"></tbody>
+               </table>
+           </div>
+       </section>
 
-    </template>
+   </template>
 
-    <template id="transaction">
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-    </template>
+   <template id="transaction">
+       <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+       </tr>
+   </template>
 
-    <!--404-->
-    <template id="404">
-        <section class="Error-page">
-            <div class="Error-container">
-                <div class="Error-title text-center">
-                    <img class="Error-logo" src="./Assets/img/BankAppLogo2.png" alt="Bank App Logo">
-                </div>
-                <h2>Error 404: page not found</h2>
-            
-                <button onclick="navigate('/login')">Go to Login</button>
-            </div>
-        </section>
-    </template>
+   <!--404-->
+   <template id="404">
+       <section class="Error-page">
+           <div class="Error-container">
+               <div class="Error-title text-center">
+                   <img class="Error-logo" src="./Assets/img/BankAppLogo2.png" alt="Bank App Logo">
+               </div>
+               <h2>Error 404: page not found</h2>
+           
+               <button onclick="navigate('/login')">Go to Login</button>
+           </div>
+       </section>
+   </template>
 
- </body>
- </html>
+</body>
+</html>
