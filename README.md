@@ -25,7 +25,7 @@ Esta app ayuda a registrarse, mostrar el estado de cada una de las cuentas del u
 
 > Nota: En caso de que no se ejecute la aplicación con el enlace de la parte superior descargue este repositorio y ejecútelo en su equipo siguiendo las siguientes <a href="https://github.com/microsoft/Web-Dev-For-Beginners/blob/main/7-bank-project/solution/translations/README.es.md">indicaciones</a>. Así como también ejecute el <a href="https://github.com/microsoft/Web-Dev-For-Beginners/blob/main/7-bank-project/api/translations/README.es.md">API Server</a> para el correcto funcionamiento. 
 
-### Credits
+### Creditos
 
 Las lecciones para el desarrollo de este proyecto fueron escritas con :hearts: por [Yohan Lasorsa](https://twitter.com/sinedied)
 
