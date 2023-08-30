@@ -1,7 +1,7 @@
 # BankApp
 Aplicación web de un banco ficticio que ayuda a administrar el estado de cuentas y obtener datos de una API
 
-<h3>¡<a href="https://yoel-gasca.github.io/BankApp/">Gestiona tu cuenta de BankApp</a></h3>
+<h3><a href="https://yoel-gasca.github.io/BankApp/">Gestiona tu cuenta de BankApp</a></h3>
 
 Esta app ayuda a registrarse, mostrar el estado de cada una de las cuentas del usuario correspondiente y también se pueden realizar transacciones de capital.
 
